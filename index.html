@@ -40,31 +40,59 @@
 
                 <!-- Filter Task -->
                  <div class="filter-task">
-                    <select id="sort-options" onchange="sortTasks()">
-                        <option value="default">Sort By</option>
-                        <option value="date-asc">Date Ascending</option>
-                        <option value="date-desc">Date Descending</option>
+                    <select id="sort-select" onchange="handleSort(this.value)" aria-label="Sort Tasks">
+                        <option value="date-asc">Newest</option>
+                        <option value="date-desc">Oldest</option>
                         <option value="name-asc">Name A-Z</option>
                         <option value="name-desc">Name Z-A</option>
                     </select>
-            </section>
-
-            <!-- Form Section -->
-            <section>
-                <form>
-                    <!-- To Do Input -->
-                    <input type="text" id="task-input" placeholder="Add a new task...">
-                    <!-- Date Input -->
-                    <input type="date" id="task-date">
-                </form>
-
-                <!-- Submit Button -->
-                    <button class="border rounded p-2 bg-green-500 text-white" onclick="addTodo()" type="button">Add
-                    Task</button>
-                <h2>My Tasks</h2>
-                <ul id="task-list"></ul>
+                </div>
             </section>
         </header>
+
+        <!-- Task List Section -->
+        <section class="task-list-container">
+            <!-- Empty List/State -->
+            <div id="emptyState" class="empty-state">
+                <!-- font-awesome-solid font-awesome-clipboard-list -->
+                <i class="fas fa-clipboard-list"></i>
+                <p>No tasks available. Add a new task to get started!</p>
+            </div> 
+
+            <!-- List Elements -->
+            <ul id="taskList">
+                <!-- JavaScript inject List Item -->
+            </ul>
+        </section>
+
+        <!-- Floating Action Button New Task Button -->
+        <div class="fab-wrapper">
+            <button class="fab-button" onclick="openPopup()" aria-label="Add New Task">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <!-- Popup Form Section for Adding New Task Form-->
+        <div id="taskPopup" class="popup" role="dialog" aria-modal="true">
+            <div class="popup-content">
+                <!-- Popup Header -->
+                <div class="popup-header">
+                    <h3 id="popup-title">Add New Task</h3>
+                    <button class="close-button" onclick="closePopup()" aria-label="Close Popup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Task Input Form -->
+                <form id="taskForm" onsubmit="handleFormSubmit(event)">
+                    <!-- (For Edit) Hidden Input Task ID -->
+                    <input type="hidden" id="taskId">
+
+                    <!-- Task Name Input Group -->
+                    
+                </form>
+            </div>
+        </div>
     </main>
 </body>
 </html>
