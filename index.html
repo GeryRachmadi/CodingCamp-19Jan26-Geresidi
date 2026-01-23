@@ -6,7 +6,7 @@
     <title>To-do List</title>
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
     
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -33,16 +33,16 @@
             <section class="control-wrapper">
                 <!-- Task Status -->
                  <div class="task-status">
-                    <button class="status-button active" onclick="filterTasks('all')">All</button>
-                    <button class="status-button" onclick="filterTasks('pending')">Pending</button>
-                    <button class="status-button" onclick="filterTasks('completed')">Completed</button>
+                    <button class="status-button active" onclick="statusTasks('all')" data-filter="all">All</button>
+                    <button class="status-button" onclick="statusTasks('active')" data-filter="active">Ongoing</button>
+                    <button class="status-button" onclick="statusTasks('completed')" data-filter="completed">Completed</button>
                 </div>
 
                 <!-- Filter Task -->
                  <div class="filter-task">
                     <select id="sort-select" onchange="handleSort(this.value)" aria-label="Sort Tasks">
-                        <option value="date-asc">Newest</option>
-                        <option value="date-desc">Oldest</option>
+                        <option value="date-asc">Closest Deadline</option>
+                        <option value="date-desc">Furthest Deadline</option>
                         <option value="name-asc">Name A-Z</option>
                         <option value="name-desc">Name Z-A</option>
                     </select>
@@ -78,7 +78,7 @@
         <div class="popup-content">
             <!-- Popup Header -->
             <div class="popup-header">
-                <h3 id="popup-title">Add New Task</h3>
+                <h3 id="popupTitle">Add New Task</h3>
                 <button class="close-button" onclick="closePopup()" aria-label="Close Popup">
                     <i class="fas fa-times"></i>
                 </button>
@@ -94,7 +94,7 @@
                     <label for="taskName">Task Name</label>
                     <input type="text" id="taskName" class="form-control" placeholder="What do you want to accomplish?" required>
                     <!-- Error Message if Task Name is Empty -->
-                    <p id="error-message" id="nameError">Task name cannot be empty.</p>
+                    <p class="error-message" id="nameError">Task name cannot be empty.</p>
                 </div>
 
                 <!-- Task Due Date -->
@@ -120,6 +120,6 @@
     </footer>
 
     <!-- JavaScript File -->
-    <script src="js/scripts.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -66,7 +66,7 @@ header {
 }
 
 /* Control Wrapper/Navbar */
-.controls-wrapper {
+.control-wrapper {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -231,7 +231,7 @@ header {
     gap: 8px;
 }
 
-.action-btn {
+.action-button {
     border: none;
     background: transparent;
     color: #adb5bd;
@@ -241,8 +241,8 @@ header {
     transition: color 0.2s;
 }
 
-.action-btn.edit:hover { color: var(--primary-color); }
-.action-btn.delete:hover { color: var(--danger-color); }
+.action-button.edit:hover { color: var(--primary-color); }
+.action-button.delete:hover { color: var(--danger-color); }
 
 /* Empty State */
 .empty-state {
@@ -389,6 +389,6 @@ header {
 
 /* Responsive Fix */
 @media (min-width: 450px) {
-    .modal { align-items: center; }
-    .modal-content { border-radius: 20px; width: 90%; }
+    .popup { align-items: center; }
+    .popup-content { border-radius: 20px; width: 90%; }
 }
