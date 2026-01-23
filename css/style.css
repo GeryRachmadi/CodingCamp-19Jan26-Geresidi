@@ -1,0 +1,27 @@
+:root{
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --bg-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --border-color: #e9ecef;
+    --success-color: #4cc9f0;
+    --danger-color: #f72585;
+    --card-bg: #ffffff;
+}
+
+* {
+        margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column; /* Added for Footer positioning */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
