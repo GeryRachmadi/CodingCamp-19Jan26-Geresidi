@@ -7,34 +7,65 @@
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <!-- Fonts -->
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1 class="text-2xl font-bold">To-do List</h1>
-    </header>
 
     <!-- Main Content Section -->
-    <main>
-        <!-- Form Section -->
-        <section>
-            <form>
-                <!-- To Do Input -->
-                <input type="text" id="task-input" placeholder="Add a new task...">
-                <!-- Date Input -->
-                <input type="date" id="task-date">
-            </form>
+    <main class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-top">
+                <div>
+                    <!-- App Title -->
+                    <h1 class="app-title">To-do List</h1>
+                    <!-- Current Date -->
+                    <p id="dateDisplay">Loading Date...</p>
+                </div>
+            </div>
 
-            <!-- Submit Button -->
-                <button class="border rounded p-2 bg-green-500 text-white" onclick="addTodo()" type="button">Add
-                Task</button>
-            <h2>My Tasks</h2>
-            <ul id="task-list"></ul>
-        </section>
+            <!-- Navigation Bar / Control Section -->
+            <section class="control-wrapper">
+                <!-- Task Status -->
+                 <div class="task-status">
+                    <button class="status-button active" onclick="filterTasks('all')">All</button>
+                    <button class="status-button" onclick="filterTasks('pending')">Pending</button>
+                    <button class="status-button" onclick="filterTasks('completed')">Completed</button>
+                </div>
+
+                <!-- Filter Task -->
+                 <div class="filter-task">
+                    <select id="sort-options" onchange="sortTasks()">
+                        <option value="default">Sort By</option>
+                        <option value="date-asc">Date Ascending</option>
+                        <option value="date-desc">Date Descending</option>
+                        <option value="name-asc">Name A-Z</option>
+                        <option value="name-desc">Name Z-A</option>
+                    </select>
+            </section>
+
+            <!-- Form Section -->
+            <section>
+                <form>
+                    <!-- To Do Input -->
+                    <input type="text" id="task-input" placeholder="Add a new task...">
+                    <!-- Date Input -->
+                    <input type="date" id="task-date">
+                </form>
+
+                <!-- Submit Button -->
+                    <button class="border rounded p-2 bg-green-500 text-white" onclick="addTodo()" type="button">Add
+                    Task</button>
+                <h2>My Tasks</h2>
+                <ul id="task-list"></ul>
+            </section>
+        </header>
     </main>
 </body>
 </html>
+
