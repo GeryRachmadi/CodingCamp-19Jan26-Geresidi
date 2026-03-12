@@ -38,32 +38,53 @@ body.light {
     --accent-h:   #3d5ce6;
 }
 
-/* Light mode priority chip adjustments */
-body.light .task-chip.p-someday   { background: rgba(107,114,128,0.12); color: #4b5563; }
-body.light .task-chip.p-nice      { background: rgba(59,130,246,0.12);  color: #1d4ed8; }
-body.light .task-chip.p-normal    { background: rgba(234,179,8,0.15);   color: #854d0e; }
-body.light .task-chip.p-important { background: rgba(249,115,22,0.12);  color: #c2410c; }
-body.light .task-chip.p-urgent    { background: rgba(239,68,68,0.12);   color: #b91c1c; }
+/* Light mode priority chip adjustments — vivid, saturated, light-friendly */
 
-body.light .event-block-abs.p-someday   { background: rgba(107,114,128,0.18); color: #374151; }
-body.light .event-block-abs.p-nice      { background: rgba(59,130,246,0.18);  color: #1e40af; }
-body.light .event-block-abs.p-normal    { background: rgba(234,179,8,0.2);    color: #78350f; }
-body.light .event-block-abs.p-important { background: rgba(249,115,22,0.18);  color: #9a3412; }
-body.light .event-block-abs.p-urgent    { background: rgba(239,68,68,0.18);   color: #991b1b; }
+/* Someday — soft slate */
+body.light .task-chip.p-someday   { background: #e2e8f0; border-color: #94a3b8; color: #334155; }
+body.light .task-chip.p-nice      { background: #dbeafe; border-color: #60a5fa; color: #1e40af; }
+body.light .task-chip.p-normal    { background: #ffed29; border-color: #facc15; color: #713f12; }
+body.light .task-chip.p-important { background: #ffedd5; border-color: #fb923c; color: #7c2d12; }
+body.light .task-chip.p-urgent    { background: #fee2e2; border-color: #f87171; color: #7f1d1d; }
 
-body.light .month-chip.p-someday   { background: rgba(107,114,128,0.15); color: #374151; }
-body.light .month-chip.p-nice      { background: rgba(59,130,246,0.15);  color: #1e40af; }
-body.light .month-chip.p-normal    { background: rgba(234,179,8,0.18);   color: #78350f; }
-body.light .month-chip.p-important { background: rgba(249,115,22,0.15);  color: #9a3412; }
-body.light .month-chip.p-urgent    { background: rgba(239,68,68,0.15);   color: #991b1b; }
+body.light .event-block-abs.p-someday   { background: #e2e8f0; border-color: #94a3b8; color: #334155; }
+body.light .event-block-abs.p-nice      { background: #dbeafe; border-color: #60a5fa; color: #1e40af; }
+body.light .event-block-abs.p-normal    { background: #ffed29; border-color: #facc15; color: #713f12; }
+body.light .event-block-abs.p-important { background: #ffedd5; border-color: #fb923c; color: #7c2d12; }
+body.light .event-block-abs.p-urgent    { background: #fee2e2; border-color: #f87171; color: #7f1d1d; }
 
-body.light .priority-badge.p-someday   { background: rgba(107,114,128,0.15); color: #374151; }
-body.light .priority-badge.p-nice      { background: rgba(59,130,246,0.15);  color: #1e40af; }
-body.light .priority-badge.p-normal    { background: rgba(234,179,8,0.18);   color: #78350f; }
-body.light .priority-badge.p-important { background: rgba(249,115,22,0.15);  color: #9a3412; }
-body.light .priority-badge.p-urgent    { background: rgba(239,68,68,0.15);   color: #991b1b; }
+body.light .month-chip.p-someday   { background: #e2e8f0; border-color: #94a3b8; color: #334155; }
+body.light .month-chip.p-nice      { background: #dbeafe; border-color: #60a5fa; color: #1e40af; }
+body.light .month-chip.p-normal    { background: #ffed29; border-color: #facc15; color: #713f12; }
+body.light .month-chip.p-important { background: #ffedd5; border-color: #fb923c; color: #7c2d12; }
+body.light .month-chip.p-urgent    { background: #fee2e2; border-color: #f87171; color: #7f1d1d; }
 
-body.light .prio-opt.p-normal.active   { color: #111; }
+body.light .priority-badge.p-someday   { background: #e2e8f0; color: #334155; }
+body.light .priority-badge.p-nice      { background: #dbeafe; color: #1e40af; }
+body.light .priority-badge.p-normal    { background: #ffed29; color: #713f12; }
+body.light .priority-badge.p-important { background: #ffedd5; color: #7c2d12; }
+body.light .priority-badge.p-urgent    { background: #fee2e2; color: #7f1d1d; }
+
+/* Priority picker buttons in light mode */
+body.light .prio-opt.p-someday.active   { background: #94a3b8; border-color: #94a3b8; color: #fff; }
+body.light .prio-opt.p-nice.active      { background: #60a5fa; border-color: #60a5fa; color: #fff; }
+body.light .prio-opt.p-normal.active    { background: #facc15; border-color: #facc15; color: #713f12; }
+body.light .prio-opt.p-important.active { background: #fb923c; border-color: #fb923c; color: #fff; }
+body.light .prio-opt.p-urgent.active    { background: #f87171; border-color: #f87171; color: #fff; }
+
+/* Task item left border in light mode */
+body.light .task-item.p-someday   { border-left-color: #94a3b8; }
+body.light .task-item.p-nice      { border-left-color: #60a5fa; }
+body.light .task-item.p-normal    { border-left-color: #facc15; }
+body.light .task-item.p-important { border-left-color: #fb923c; }
+body.light .task-item.p-urgent    { border-left-color: #f87171; }
+
+/* Priority legend dots in light mode */
+body.light .dot.p-someday   { background: #94a3b8; }
+body.light .dot.p-nice      { background: #60a5fa; }
+body.light .dot.p-normal    { background: #facc15; }
+body.light .dot.p-important { background: #fb923c; }
+body.light .dot.p-urgent    { background: #f87171; }
 
 body.light ::-webkit-scrollbar-thumb { background: #c4cde0; }
 body.light ::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
@@ -524,9 +545,22 @@ body {
 .week-scroll {
     flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
     display: flex;
     flex-direction: column;
+}
+
+/* week-header-row sticky inside the scroll container */
+.week-header-row {
+    display: grid;
+    grid-template-columns: var(--time-col) repeat(7, 1fr);
+    border-bottom: 2px solid var(--border);
+    flex-shrink: 0;
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-width: 560px;
 }
 
 /* week-grid is now flex column managed entirely by JS */
@@ -534,6 +568,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 560px;
 }
 
 .week-time-cell {
@@ -1085,11 +1120,6 @@ label {
 
     /* Month cells smaller */
     .month-cell { min-height: 60px; }
-
-    /* Week grid — allow horizontal scroll */
-    .week-scroll { overflow-x: auto; }
-    .week-grid   { min-width: 560px; }
-    .week-header-row { min-width: 560px; overflow-x: auto; }
 
     /* List padding */
     .task-list { padding: 4px 12px 24px; }
