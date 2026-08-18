@@ -1,73 +1,94 @@
-# 📝 Priorme - Simple To-Do List App
+# 📝 Priorme - Smart To-Do & Calendar App (React + Vite)
 
-> **Mini Project for Software Engineering Coding Camp (19 Jan 2026) by RevoU**
+> **Mini Project for Software Engineering Coding Camp by RevoU — Transitioned to React**
 
-A lightweight, responsive, and persistent Task Manager application built using **Semantic HTML**, **Vanilla CSS**, and **Modern JavaScript**. This project demonstrates DOM manipulation, LocalStorage handling, and structured code organization.
+A lightweight, responsive, and persistent Smart To-Do & Calendar application built using **React 19**, **Vite**, **Modern JavaScript**, and **Vanilla CSS**.
 
-👇 Give it a try!
-
-🔗 [Click this link](https://geryrachmadi.github.io/Priorme/)
-
-![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![Project Status](https://img.shields.io/badge/Status-Transitioned%20to%20React-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## 📸 Screenshots
-![Tampilan Aplikasi Priorme](image/priorme-screenshot.png)
+![Tampilan Aplikasi Priorme](public/image/priorme-screenshot.png)
 
 ## ✨ Features
 
-This application includes the following functionalities:
-
-* **CRUD Operations**: Create, Read, Update, and Delete tasks.
-* **Modal Form**: Clean popup interface for adding and editing tasks.
-* **Data Persistence**: Uses `localStorage` so data is not lost on refresh.
-* **Smart Filtering**: Filter tasks by **All**, **Pending**, or **Done**.
-* **Sorting System**: Sort tasks by:
-    * 📅 Date (Furthest/Nearest)
-    * 🔤 Name (A-Z / Z-A)
-* **Validation**: Prevents adding empty tasks.
-* **Responsive Design**: Fully functional on Mobile and Desktop.
-* **Visual Indicators**: Highlights overdue tasks and creates strikethrough for completed items.
+* **4 Calendar & List Views**:
+  * 📅 **Day View**: 24-hour timeline with untimed / all-day sections
+  * 📆 **Week View**: 7-day responsive grid with timed event blocks
+  * 🗓️ **Month View**: Complete calendar month grid with task chips and overflow count
+  * 📋 **List View**: Detailed list with sorting and instant completion toggles
+* **Task & Event Support**: Differentiate between actionable to-dos (with deadline) and scheduled events (start/end times, location).
+* **Priority System**: 5-level priority color coding (*Someday*, *Nice to Have*, *Normal*, *Important*, *URGENT!*).
+* **Dark & Light Mode**: Built-in theme toggle with persistent preferences.
+* **CRUD Operations & Modals**: Create, Read, Update, and Delete with instant UI reactivity.
+* **Data Persistence**: Uses `localStorage` (`priorme_todos`) so your tasks are preserved automatically.
+* **Smart Filtering & Sorting**: Filter by *All*, *Ongoing*, *Completed*, and sort by *Deadline*, *Name*, or *Priority*.
+* **Responsive Design**: Full desktop sidebar and mobile-friendly slide-out drawer with backdrop.
 
 ## 🛠️ Tech Stack
 
-* **HTML5**: Uses semantic tags (`<main>`, `<header>`, `<section>`) for better structure and accessibility.
-* **CSS3**: Pure Vanilla CSS using CSS Variables (`:root`) and Flexbox. No external CSS frameworks (like Tailwind/Bootstrap) were used to demonstrate core CSS mastery.
-* **JavaScript**: ES6+ features including Arrow Functions, Template Literals, and LocalStorage API.
-* **External Assets**:
-    * [FontAwesome](https://fontawesome.com/) for icons.
-    * [Google Fonts](https://fonts.google.com/) (Poppins) for typography.
+* **Frontend Framework**: [React 19](https://react.dev/)
+* **Build Tool & Dev Server**: [Vite 6](https://vitejs.dev/)
+* **Styling**: Vanilla CSS with CSS Variables (`:root`), dark/light themes, and responsive design
+* **Icons & Fonts**: FontAwesome 6, DM Sans & Syne (Google Fonts)
 
 ## 📂 Project Structure
 
-The project follows a clean "Separation of Concerns" architecture:
-
 ```text
-CodingCamp-19Jan26-Geresidi/
-│
-├── index.html          # Main HTML structure
-├── css/
-│   └── style.css       # All styling rules
-├── js/
-│   └── script.js       # Logic and functionality
-├── image/
-│   └── Priorme-screenshot.png # Web-app Display Screenshot
-└── README.md           # Project documentation
+Priorme/
+├── public/
+│   └── image/                  # Static assets (logo, screenshots)
+├── src/
+│   ├── constants/
+│   │   └── priorities.js       # Priority labels, levels & orders
+│   ├── utils/
+│   │   └── dateUtils.js        # Date formatting, week/month grid helpers
+│   ├── hooks/
+│   │   ├── useTodos.js         # Todo state management & localStorage sync
+│   │   └── useTheme.js         # Dark / Light theme toggle hook
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Sidebar.jsx     # Navigation, filters, and priority legend
+│   │   │   └── Topbar.jsx      # Date controls, view toggles & theme switcher
+│   │   ├── views/
+│   │   │   ├── DayView.jsx     # 24h day timeline view
+│   │   │   ├── WeekView.jsx    # 7-day grid week view
+│   │   │   ├── MonthView.jsx   # Calendar month grid view
+│   │   │   └── ListView.jsx    # Sortable task list view
+│   │   ├── modals/
+│   │   │   ├── TaskFormModal.jsx   # Add / Edit Task & Event modal
+│   │   │   └── TaskDetailModal.jsx # Task detail view popup
+│   │   └── common/
+│   │       ├── TaskChip.jsx    # Reusable chip for all-day sections
+│   │       └── EventBlock.jsx  # Absolutely positioned time blocks
+│   ├── App.jsx                 # Root component wiring all views & state
+│   ├── main.jsx                # React DOM mount entry point
+│   └── index.css               # Design system & component stylesheets
+├── index.html                  # HTML entry point
+├── package.json
+└── vite.config.js
 ```
 
-## 🚀 How to Run
-* Clone the repository:
-  ```
-  git clone https://github.com/GeryRachmadi/CodingCamp-19Jan26-Geresidi.git
-  ```
-* Navigate to the folder:
-  ```
-  cd CodingCamp-19Jan26-Geresidi
-  ```
-* **Launch**: Simply open the `index.html` file in your preferred web browser (Chrome, Edge, Firefox, etc.).
+## 🚀 Getting Started
+
+### 1. Install dependencies
+```bash
+npm install
+```
+
+### 2. Start the development server
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 3. Build for production
+```bash
+npm run build
+```
 
 ## 👤 Author
 **Mohammad Geresidi Rachmadi**
-* **GitHub**: [@GeryRachmadi](https://www.google.com/search?q=https://github.com/GeryRachmadi)
+* **GitHub**: [@GeryRachmadi](https://github.com/GeryRachmadi)
 * **LinkedIn**: [Mohammad Geresidi Rachmadi](https://www.linkedin.com/in/mgeresidir/)
 * **Instagram**: [@gryrchmd](https://www.instagram.com/gryrchmd/)
